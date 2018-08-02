@@ -20,5 +20,7 @@ namespace carDealership.Models
             Console.WriteLine($"Transaction incoming:{IsIncoming}");
             Console.WriteLine($"Value of transaction:{Price}");
         }
+
+      
     }
 }

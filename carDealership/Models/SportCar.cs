@@ -16,5 +16,6 @@ namespace carDealership.Models
             Console.WriteLine($"Horsepower: {HorsePower}");
         }
 
+       
     }
 }

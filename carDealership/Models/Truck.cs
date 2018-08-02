@@ -15,5 +15,6 @@ namespace carDealership.Models
             base.Display();
             Console.WriteLine($"Number of wheels: {NumberOfWheels}");
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace carDealership.Models
 {
-    public class Car
+    public abstract class Car
     {
         public string Model { get; set; }
         public string Type { get; set; }
@@ -18,5 +18,7 @@ namespace carDealership.Models
             Console.WriteLine($"Type: {Type}");
             Console.WriteLine($"NumberOfDoors: {NumberOfDoors}");
         }
+
+      
     }
 }
