@@ -17,7 +17,15 @@ namespace carDealership.Models
         {
             Console.WriteLine($"Date: {Date}");
             Console.WriteLine($"Model of car: {Car.Model}");
-            Console.WriteLine($"Transaction incoming:{IsIncoming}");
+            if(IsIncoming == true)
+            {
+                Console.WriteLine("Transaction incoming!");
+            }
+            else
+            {
+                Console.WriteLine("Transaction outcoming!");
+            }
+           // Console.WriteLine($"Transaction incoming:{IsIncoming}");
             Console.WriteLine($"Value of transaction:{Price}");
         }
 

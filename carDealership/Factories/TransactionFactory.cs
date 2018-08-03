@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using carDealership.Helpers;
 
 namespace carDealership.Factories
 {
     class TransactionFactory
     {
+        private readonly InputHelper _inputHelper = new InputHelper();
         public Transaction CreateTransaction(Car car, bool isIncoming)
         {
             Transaction createdTransaction = null;
@@ -42,17 +44,19 @@ namespace carDealership.Factories
         {
             var fvat = new Fvat();
             FillTransactionFields(fvat,car,isIncoming);
-            Console.WriteLine("Enter precentage: ");
-            fvat.Percentage = int.Parse(Console.ReadLine());
+           // Console.WriteLine("Enter precentage: ");
+           // fvat.Percentage = int.Parse(Console.ReadLine());
+            fvat.Percentage = _inputHelper.getIntFromConsole("Enter %:");
+            Console.WriteLine("Enter company name: ");
             fvat.CompanyName = Console.ReadLine();
             return fvat;
         }
 
         public virtual void FillTransactionFields(Transaction transaction, Car car, bool isIncoming)
         {
-            Console.WriteLine($"Date: ");
-            // parse to datetime
-            Console.WriteLine($"Model of car: ");
+            Console.WriteLine($"Date(dd/MM/yyyy): ");
+            string DateString = Console.ReadLine();
+            transaction.Date = DateTime.ParseExact(DateString, "dd/MM/yyyy",System.Globalization.CultureInfo.InvariantCulture);
             transaction.Car = car;
             if(isIncoming == true)
             {

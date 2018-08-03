@@ -63,18 +63,27 @@ namespace carDealership
         public static void DisplayAllCars()
         {
             var carsList = _allCarsRepository.GetAllCars();
+            var index = 1;
             foreach (var car in carsList)
             {
+                Console.WriteLine("");
+                Console.WriteLine($"{index}.");
                 car.Display();
+                index++;
+
             }
         }
 
         public static void DisplayAllTransactions()
         {
             var transactionsList = _allTransactionsRepository.GetAllTransactions();
+            var index = 1;
             foreach(var transaction in transactionsList)
             {
+                Console.WriteLine("");
+                Console.WriteLine($"{index}.");
                 transaction.Display();
+                index++;
             }
         }
 
@@ -92,6 +101,7 @@ namespace carDealership
             Console.WriteLine("Which car do you want to sell?(select from car list)");
             var index = int.Parse(Console.ReadLine());
             var transaction = _transactionFactory.CreateTransaction(_allCarsRepository.GetCar(index), false);
+            _allTransactionsRepository.AddTransaction(transaction);
             _allCarsRepository.RemoveCar(index);
         }
     }

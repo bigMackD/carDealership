@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Factories\CarFactory.cs" />
     <Compile Include="Factories\TransactionFactory.cs" />
+    <Compile Include="Helpers\InputHelper.cs" />
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Fvat.cs" />
