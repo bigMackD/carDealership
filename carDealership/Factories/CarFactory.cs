@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace carDealership.Factories
 {
-    class CarFactory
+    public class CarFactory
     {
         public Car CreateCar()
         {
             Car createdCar = null;
             Console.WriteLine("Choose car type: ");
-            Console.WriteLine("1.Sport car");
-            Console.WriteLine("Truck");
+            Console.WriteLine("1. Sport car");
+            Console.WriteLine("2. Truck");
             var chosenCar = Console.ReadKey(true);
             switch (chosenCar.Key)
             {
@@ -31,6 +31,7 @@ namespace carDealership.Factories
         private Car CreateSportCar()
         {
             var sportCar = new SportCar();
+            FillCarFields(sportCar);
             Console.WriteLine("Horsepower: ");
             sportCar.HorsePower = int.Parse(Console.ReadLine());
             return sportCar;
@@ -40,6 +41,7 @@ namespace carDealership.Factories
         private Car CreateTruck()
         {
             var truck = new Truck();
+            FillCarFields(truck);
             Console.WriteLine("Number of wheels: ");
             truck.NumberOfWheels = int.Parse(Console.ReadLine());
             return truck;

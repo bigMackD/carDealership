@@ -16,6 +16,15 @@ namespace carDealership.Repositories
             _carRepository.Add(car);
         }
 
+        public void RemoveCar(int index)
+        {
+            _carRepository.RemoveAt(index);
+        }
+        
+        public Car GetCar(int index)
+        {
+            return _carRepository[index];
+        }
         public IEnumerable<Car> GetAllCars()
         {
             return _carRepository;

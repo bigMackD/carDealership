@@ -15,6 +15,10 @@ namespace carDealership.Repositories
         {
             _allTransactions.Add(transaction);
         }
+        public void RemoveTransaction(int index)
+        {
+            _allTransactions.RemoveAt(index);
+        }
         public IEnumerable<Transaction> GetAllTransactions()
         {
             return _allTransactions;
